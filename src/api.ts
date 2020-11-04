@@ -9,6 +9,7 @@ export const router = (app: express.Application) => {
   app.post("/", (req, res) => {
     try {
       const body = req.body;
+      console.log(body);
       validatePostData(body);
       const response = runner.runPipes(body.payload);
       return res.status(StatusCodes.OK).json({ response });
